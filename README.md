@@ -1,1 +1,1 @@
-# Structured Programming Proyect
+# Power Outage Simulator for PR
