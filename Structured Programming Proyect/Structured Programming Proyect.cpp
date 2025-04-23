@@ -22,6 +22,26 @@ void UserEntry(int& date, int& month, int& year, int& hour, string& place) {
 	cin.ignore(); // Avoids skipping input data
 	getline(cin, place);
 }
+//M.P.V
+//Function Option 2: Outputs the history of the user entry
+void DisplayOutageHistory(int date[], int month[], int year[], int hour[], string place[], int size) {
+
+	if (size == 0) {
+
+		cout << "No outage data recorded yet" << "\n";
+
+	}
+	else {
+
+		cout << "The Outage History: " << "\n";
+
+		for (int i = 0; i < size; i++) {
+
+			cout << "Date: " << " " << date[i] << "/ " << month[i] << "/ " << year[i] << "\n";
+			cout << "Duration: " << " " << hour[i] << "hrs, Place:  " << place[i] << "\n";
+		}
+	}
+}
 //L.C.M.
 //Function Option 3: Find the place with the longest outage 
 string PlaceWMHours(int hour[], string place[], int size) {
@@ -73,7 +93,22 @@ int main() {
 	int date[LIMIT], month[LIMIT], year[LIMIT], hour[LIMIT], size = 0;
 	string place[LIMIT];
 
+	//M.P.V
+	//Menu of option so the user can input their choice
 	do {
+
+		cout << " *****************************************************" << "\n";
+		cout << " * Welcome to the Power Outage information Simulator * " << "\n";
+		cout << " *****************************************************" << "\n";
+
+		cout << "\n";
+
+		cout << "1. Data entry for Outage" << "\n";
+		cout << "2. See all Outage's history" << "\n";
+		cout << "3. See Place with most hours without power" << "\n";
+		cout << "4. See most frequently mentioned place" << "\n";
+		cout << "5. Exit" << "\n";
+
 		cout << "Enter an option (1-5): ";
 		cin >> option;
 
@@ -88,11 +123,11 @@ int main() {
 			else {
 				cout << "Records at full capacity.\n";
 			}
+			break;
 
-
+			//M.P.V
 		case 2://See users data entry
-
-			cout << "2 has been executed\n";
+			DisplayOutageHistory(date, month, year, hour, place, size);
 			break;
 
 		case 3://The place with most hours
@@ -106,7 +141,7 @@ int main() {
 			break;
 
 		case 5://Exit option
-			cout << "5 Thank you for using this software...\n";
+			cout << " Thank you for using this software...\n";
 			break;
 
 		default:
