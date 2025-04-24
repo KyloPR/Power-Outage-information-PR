@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>//added the <string> library to handle and manipulate text data in a more flexible way. L.C.M.
 #include <map> //added <map> library to count occurrences of each unique location entered by the user in option 4. L.C.M.
+#include <fstream> // Added for file handling M.P.V
 using namespace std;
 
 void UserEntry(int& date, int& month, int& year, int& hour, string& place) {
@@ -21,7 +22,24 @@ void UserEntry(int& date, int& month, int& year, int& hour, string& place) {
 	//L.C.M. modified
 	cin.ignore(); // Avoids skipping input data
 	getline(cin, place);
+	
+//M.P.V
+// Code obtained with the help of Copilot:
+// This snippet saves the user's input to a text file (outage_data.txt)
+// using append mode to avoid overwriting previous records.
+
+	ofstream outFile("outage_data.txt", ios::app); // Open file in append mode
+	if (outFile) {
+		outFile << date << "," << month << "," << year << "," << hour << "," << place << "\n"; // Write data
+		outFile.close(); // Close file to save changes
+		cout << "Outage data saved successfully!" << endl; // Confirmation message
+	}
+	else {
+		cout << "Error opening file for writing." << endl; // Error handling
+	}
 }
+//Ends Copilot code 
+
 //M.P.V
 //Function Option 2: Outputs the history of the user entry
 void DisplayOutageHistory(int date[], int month[], int year[], int hour[], string place[], int size) {
