@@ -4,6 +4,7 @@
 #include <fstream> // Added for file handling M.P.V
 using namespace std;
 
+//M.P.V
 void UserEntry(int& date, int& month, int& year, int& hour, string& place) {
 
 	cout << "Insert the date of the outage: ";
@@ -133,7 +134,7 @@ do {
 		switch (option) {
 			//User Entry of the info
 		case 1:
-
+			//M.P.V
 			if (size < LIMIT) {
 				UserEntry(date[size], month[size], year[size], hour[size], place[size]);
 				size++;
@@ -157,7 +158,8 @@ do {
 
 			cout << MostMentionedPlace(place, size) << endl;
 			break;
-
+			
+			//M.P.V
 		case 5://Exit option
 			cout << " Thank you for using this software...\n";
 			break;
