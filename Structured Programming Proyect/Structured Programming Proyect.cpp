@@ -113,14 +113,14 @@ int main() {
 
 	//M.P.V
 	//Menu of option so the user can input their choice
-	do {
+	
 
 		cout << " *****************************************************" << "\n";
 		cout << " * Welcome to the Power Outage information Simulator * " << "\n";
 		cout << " *****************************************************" << "\n";
 
 		cout << "\n";
-
+do {
 		cout << "1. Data entry for Outage" << "\n";
 		cout << "2. See all Outage's history" << "\n";
 		cout << "3. See Place with most hours without power" << "\n";
